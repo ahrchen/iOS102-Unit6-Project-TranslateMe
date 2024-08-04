@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct TranslationView: View {
+    
+    @State var translationManager: TranslationManager
+    
+    init(isMocked: Bool = false) {
+        translationManager = TranslationManager(isMocked: isMocked)
+    }
+    
+    
     var body: some View {
-           VStack {
-               Text("This is the Translation View")
-                   .font(.largeTitle)
-                   .padding()
-
-               Spacer()
-           }
-           .navigationTitle("Translation View")
-       }
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    ForEach(translationManager.translations) { translation in
+                        Text(translation.text)
+                    }
+                }
+            }
+            .navigationTitle("Translation History")
+        }
+           
+   }
 }
 
 #Preview {
