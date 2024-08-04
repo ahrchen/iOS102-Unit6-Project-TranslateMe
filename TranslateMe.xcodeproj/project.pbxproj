@@ -12,6 +12,7 @@
 		EEB0B5862C5B4AFE0064A264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB0B5852C5B4AFE0064A264 /* Assets.xcassets */; };
 		EEB0B5892C5B4AFE0064A264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEB0B5882C5B4AFE0064A264 /* Preview Assets.xcassets */; };
 		EEB0B5902C5F02CC0064A264 /* TranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB0B58F2C5F02CC0064A264 /* TranslationView.swift */; };
+		EEB0B5922C5F05140064A264 /* TranslateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB0B5912C5F05140064A264 /* TranslateResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		EEB0B5852C5B4AFE0064A264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEB0B5882C5B4AFE0064A264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEB0B58F2C5F02CC0064A264 /* TranslationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationView.swift; sourceTree = "<group>"; };
+		EEB0B5912C5F05140064A264 /* TranslateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				EEB0B5812C5B4AFD0064A264 /* TranslateMeApp.swift */,
 				EEB0B5832C5B4AFD0064A264 /* ContentView.swift */,
+				EEB0B5912C5F05140064A264 /* TranslateResponse.swift */,
 				EEB0B58F2C5F02CC0064A264 /* TranslationView.swift */,
 				EEB0B5852C5B4AFE0064A264 /* Assets.xcassets */,
 				EEB0B5872C5B4AFE0064A264 /* Preview Content */,
@@ -143,6 +146,7 @@
 				EEB0B5902C5F02CC0064A264 /* TranslationView.swift in Sources */,
 				EEB0B5842C5B4AFD0064A264 /* ContentView.swift in Sources */,
 				EEB0B5822C5B4AFD0064A264 /* TranslateMeApp.swift in Sources */,
+				EEB0B5922C5F05140064A264 /* TranslateResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

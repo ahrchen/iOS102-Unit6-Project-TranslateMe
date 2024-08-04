@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var inputText: String = ""
     @State private var translatedText: String = ""
-
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 20) {
@@ -18,7 +18,11 @@ struct ContentView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
-                Button(action: translateText) {
+                Button {
+                    Task {
+                        await fetchTranslateText()
+                    }
+                } label: {
                     Text("Translate")
                         .padding()
                         .background(Color.blue)
@@ -35,7 +39,7 @@ struct ContentView: View {
                         .padding()
                 }
                 .padding()
-
+                
                 Spacer()
                 
                 NavigationLink(destination: TranslationView()) {
@@ -51,13 +55,23 @@ struct ContentView: View {
         }
         
     }
-
-    func translateText() {
-        // Mock translation: reverse the string
-        translatedText = String(inputText.reversed())
+    
+    func fetchTranslateText() async {
+        let url = URL(string: "https://api.mymemory.translated.net/get?q=\(inputText)&langpair=en|zh-cn")!
+        do {
+            let(data, _) = try await URLSession.shared.data(from: url)
+            
+            let translationResponse = try JSONDecoder().decode(TranslationResponse.self,  from: data)
+            
+            let translatedText = translationResponse.responseData.translatedText
+            
+            self.translatedText = translatedText
+            
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
-
 #Preview {
     ContentView()
 }
