@@ -17,7 +17,7 @@ The following **required** functionality is completed:
  
 The following **optional** features are implemented:
 
-- [ ] Add a variety of choices for the languages
+- [X] Add a variety of choices for the languages
 - [X] Add UI flair
 
 The following **additional** features are implemented:
