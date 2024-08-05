@@ -25,12 +25,25 @@ struct TranslationView: View {
                     }
                 }
             }
+            Button(action: {
+                Task {
+                    await eraseTranslationHistory()
+                }
+            }, label: {
+                Text("Erase Translation History")
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+            })
             .navigationTitle("Translation History")
         }
-           
    }
+    func eraseTranslationHistory() async {
+        translationManager.deleteTranslationHistory()
+    }
 }
 
-#Preview {
-    TranslationView()
-}
+//#Preview {
+//    TranslationView()
+//}
